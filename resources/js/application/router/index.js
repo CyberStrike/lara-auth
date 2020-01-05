@@ -2,13 +2,14 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // Views
-import RegisterView from "../views/RegisterView";
+import RegisterView from '../views/RegisterView'
 import LoginView    from '../views/LoginView'
 
 Vue.use(VueRouter)
 
 export default (
   new VueRouter({
+    base: '/app/',
     routes: [
       {
         path: '/',

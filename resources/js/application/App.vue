@@ -1,12 +1,10 @@
 <template>
-  <register-view/>
+  <router-view/>
 </template>
 
 <script>
-  import RegisterView from './views/RegisterView'
   export default {
-    name: 'App',
-    components: { RegisterView },
+    name: 'App'
   }
 </script>
 

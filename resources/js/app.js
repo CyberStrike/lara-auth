@@ -1,7 +1,10 @@
-import Vue from 'Vue'
+import Vue from 'vue'
 import App from './application/App'
+import router from './application/router'
 
-const app = new Vue({
-    el: '#app',
-    render: h => h(App)
-});
+// eslint-disable-next-line no-new
+new Vue({
+  el: '#app',
+  router,
+  render: h => h(App)
+})
