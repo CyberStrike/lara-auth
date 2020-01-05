@@ -52,7 +52,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import { postRegister } from '../api'
 
   export default {
     name: 'RegisterView',
@@ -66,7 +66,7 @@
     }),
     methods: {
       async submit () {
-        await axios.post('/register', this.form)
+        await postRegister(this.form)
       }
     }
   }

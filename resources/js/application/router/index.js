@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // Views
+import AccountView  from '../views/AccountView'
 import RegisterView from '../views/RegisterView'
 import LoginView    from '../views/LoginView'
 
@@ -14,7 +15,7 @@ export default (
       {
         path: '/',
         name: 'index',
-        redirect: { name: 'Register' }
+        component: AccountView
       },
       {
         path: '/register',
