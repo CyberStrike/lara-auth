@@ -4,8 +4,13 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-body">
-            <h3 class="card-title">Register</h3>
+
             <form @submit.prevent="submit">
+              <div class="form-group row">
+                <div class="col-md-6 offset-md-4">
+                  <h3 class="text-primary">Register</h3>
+                </div>
+              </div>
               <div class="form-group row">
                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
                 <div class="col-md-6">
@@ -38,8 +43,8 @@
 
               <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
-                  <button type="submit" class="btn btn-primary">
-                    Register
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Create Account
                   </button>
                 </div>
               </div>
