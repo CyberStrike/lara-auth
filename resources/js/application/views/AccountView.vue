@@ -17,28 +17,20 @@
       user: null
     }),
     methods: {
-      async setUser (user) {
-        this.user = user
+      async setUser () {
+        this.user = await getUser()
       },
       async logout () {
-        await postLogout()
+        try {
+          await postLogout()
+          await this.$router.push({ name: 'Login' })
+        } catch (e) {
+          console.log(e)
+        }
       }
     },
     mounted () {
       this.setUser()
-    },
-    async beforeRouteEnter (to, from, next) {
-      try {
-        const user = await getUser()
-        next((vm) => { vm.setUser(user) })
-      } catch (e) {
-        if (e) {
-          next({
-            path: '/login',
-            query: { redirect: to.fullPath }
-          })
-        }
-      }
     }
   }
 </script>
