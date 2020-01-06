@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="$emit('submit')">
     <div class="form-group row">
       <div class="col-md-6 offset-md-4">
         <h3 class="text-primary">Register</h3>
