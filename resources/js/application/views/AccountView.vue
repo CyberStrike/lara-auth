@@ -1,25 +1,26 @@
 <template>
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <h3 class="card-title">
-          Account View
-        </h3>
-        <div class="card mb-5">
-          <div class="card-body">
-            <div class="container">
-              <dl class="row">
-                <dt class="col-sm-3">Name</dt>
-                <dd class="col-sm-9">{{ user.name  }}</dd>
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <h3 class="card-title mb-5">
+        Account View
+      </h3>
+      <div v-if="user" class="card mb-5">
+        <div class="card-body">
+          <dl  class="row">
+            <dt class="col-sm-3">Name</dt>
+            <dd class="col-sm-9">{{ user.name  }}</dd>
 
-                <dt class="col-sm-3">Email</dt>
-                <dd class="col-sm-9"> {{ user.email }}</dd>
-              </dl>
-            </div>
-          </div>
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9"> {{ user.email }}</dd>
+          </dl>
         </div>
-        <button @click="logout" class="btn btn-block btn-danger">Log Out</button>
       </div>
+      <div v-else class="mb-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <button @click="logout" class="btn btn-block btn-danger">Log Out</button>
     </div>
   </div>
 </template>
@@ -45,7 +46,7 @@
         }
       }
     },
-    mounted () {
+    created () {
       this.setUser()
     }
   }
